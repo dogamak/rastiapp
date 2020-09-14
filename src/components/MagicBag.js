@@ -1,28 +1,28 @@
 import React, { useState } from 'react'
-import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid';
-
 import WordList from './WordList'
 import { pohina, normal } from '../wordlist'
 
 const MagicBag = () => {
     const [clicked, setClicked] = useState(false)
+
+    const containerStyle = {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "stretch",
+        height: "100%"
+    }
+
     if (clicked) return (
-        <div>
-            <Grid container spacing={2} justify='center' >
-                <Grid item xs>
-                    <WordList list={pohina} count={1} header='Pöhinä sananne' />
-                </Grid>
-                <Grid item xs>
-                    <WordList list={normal} count={2} header='Normaalit sananne' />
-                </Grid>
-            </Grid>
+        <div style={containerStyle}>
+            <WordList list={pohina} count={3} />
+            <WordList list={normal} count={2} />
         </div>
+        
     )
 
     return (
-        <div>
-            <Button color='primary' onClick={() => setClicked(!clicked)} >Arvo!</Button>
+        <div style={containerStyle}>
+            <button onClick={() => setClicked(!clicked)} >Arvo!</button>
         </div>
     )
 }

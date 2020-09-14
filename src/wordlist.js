@@ -4,7 +4,7 @@ const pohina = [
     "Kryptovaluutta",
     "Skaalautuvuus",
     "Synergia",
-    "Käyttäjälähtöinen sisältö/UGC",
+    "Käyttäjä\xADlähtöinen sisältö",
     "Orgaaninen",
     "Crowdsourcing",
     "Optimoitu",
@@ -21,6 +21,7 @@ const pohina = [
     "Ideaatio",
     "Ekosysteemi",
     "Iteraatio",
+    "Alustatalous"
 ]
 
 const normal = [
@@ -41,6 +42,8 @@ const normal = [
     "Perseensuti",
     "Drinkkilista",
     "Luostari",
+    "Aineeton",
+    "Vuohi",
 ]
 
 export {pohina, normal}
