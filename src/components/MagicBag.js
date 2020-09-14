@@ -1,22 +1,28 @@
 import React, { useState } from 'react'
-import { sampleSize } from 'lodash'
+import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid';
 
-const MagicBag = ({ wordlist, count }) => {
-    const [words, setWords] = useState([])
+import WordList from './WordList'
+import { pohina, normal } from '../wordlist'
 
-    if (words.length === 0) return (
+const MagicBag = () => {
+    const [clicked, setClicked] = useState(false)
+    if (clicked) return (
         <div>
-            <button onClick={() => setWords(sampleSize(wordlist, count))}>
-                Draw!
-             </button>
+            <Grid container spacing={2} justify='center' >
+                <Grid item xs>
+                    <WordList list={pohina} count={1} header='Pöhinä sananne' />
+                </Grid>
+                <Grid item xs>
+                    <WordList list={normal} count={2} header='Normaalit sananne' />
+                </Grid>
+            </Grid>
         </div>
     )
 
     return (
         <div>
-            <ul>
-                {words.map(w => <li key={w}>{w}</li>)}
-            </ul>
+            <Button color='primary' onClick={() => setClicked(!clicked)} >Arvo!</Button>
         </div>
     )
 }
