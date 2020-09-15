@@ -29,9 +29,13 @@ const MagicBag = () => {
         </div>
     )
 
+    const handleClick = () => {
+        setTimeout(() => chooseWords(), 120);
+    };
+
     return (
         <div className="buttonDiv">
-            <button onClick={chooseWords} >ARVO!</button>
+            <button onClick={handleClick} >ARVO!</button>
         </div>
     )
 }
