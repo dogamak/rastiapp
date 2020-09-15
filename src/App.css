@@ -25,4 +25,10 @@ button {
     font-size: 80px;
     font-family: sans-serif;
     box-shadow: 0px 10px #bf360c, 0px 20px #bf360c, 0px 20px 50px rgba(0,0,0,0.3);
+    transition-duration: 100ms;
+}
+
+button:active {
+    margin-top: 20px;
+    box-shadow: 0px 5px #bf360c, 0px 10px #bf360c, 0px 20px 30px rgba(0,0,0,0.3);
 }

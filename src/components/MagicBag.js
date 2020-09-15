@@ -16,9 +16,13 @@ const MagicBag = () => {
         
     )
 
+    const handleClick = () => {
+        setTimeout(() => setClicked(true), 120);
+    };
+
     return (
         <div className="buttonDiv">
-            <button onClick={() => setClicked(!clicked)} >ARVO!</button>
+            <button onClick={handleClick} >ARVO!</button>
         </div>
     )
 }
