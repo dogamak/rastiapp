@@ -13,6 +13,18 @@
     background-color: #424242;
 }
 
+.item {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    color: white;
+    text-align: center;
+    font-family: sans-serif;
+    padding: 10;
+}
+
 button {
     height: 20rem;
     width: 20rem;
@@ -31,4 +43,13 @@ button {
 button:active {
     margin-top: 20px;
     box-shadow: 0px 5px #bf360c, 0px 10px #bf360c, 0px 20px 30px rgba(0,0,0,0.3);
+}
+
+
+html, body, #root {
+    height: 100%;
+}
+
+body {
+    margin: 0;
 }
