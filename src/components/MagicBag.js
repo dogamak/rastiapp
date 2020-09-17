@@ -5,12 +5,20 @@ import { sampleSize } from 'lodash'
 import "../App.css"
 
 const MagicBag = () => {
-    const [pohinaList, setPohinaList]= useState([])
-    const [normalList, setNormalList]= useState([])
+    const [pohinaList, setPohinaList] = useState([])
+    const [normalList, setNormalList] = useState([])
+    const [buttonVisibility, setButtonVisibility] = useState(false)
 
     useEffect(() => {
-        setNormalList(JSON.parse(localStorage.getItem('normalwords')))
-        setPohinaList(JSON.parse(localStorage.getItem('pohinawords')))
+        const normal = JSON.parse(localStorage.getItem('normalwords'));
+        const pohina = JSON.parse(localStorage.getItem('pohinawords'));
+
+        setNormalList(normal);
+        setPohinaList(pohina);
+
+        if (!normal || !normal) {
+            setButtonVisibility(true)
+        }
     }, [])
 
     const chooseWords = () => {
@@ -22,21 +30,31 @@ const MagicBag = () => {
        localStorage.setItem('normalwords', JSON.stringify(normalwords))
     }
 
-    if (pohinaList && normalList) return (
-        <div className="wordList">
-            <WordList list={pohinaList} />
-            <WordList list={normalList} />
-        </div>
-    )
+    let wordList = null;
+    let arvoButton = null;
 
-    const handleClick = () => {
-        setTimeout(() => chooseWords(), 120);
-    };
+    if (pohinaList && normalList) {
+        wordList = (
+            <div className="wordList">
+                <WordList list={pohinaList} />
+                <WordList list={normalList} />
+            </div>
+        );
+    }
+
+    if (buttonVisibility) {
+        arvoButton = (
+            <div className="buttonDiv">
+                <button onClick={chooseWords} >ARVO!</button>
+            </div>
+        );
+    }
 
     return (
-        <div className="buttonDiv">
-            <button onClick={handleClick} >ARVO!</button>
-        </div>
+        <>
+            { arvoButton }
+            { wordList }
+        </>
     )
 }
 
