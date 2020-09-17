@@ -14,8 +14,8 @@ const MagicBag = () => {
     }, [])
 
     const chooseWords = () => {
-       const pohinawords = sampleSize(pohina, 3) 
-       const normalwords = sampleSize(normal, 2)
+       const pohinawords = sampleSize(pohina, 2)
+       const normalwords = sampleSize(normal, 1)
        setPohinaList(pohinawords)
        setNormalList(normalwords)
        localStorage.setItem('pohinawords', JSON.stringify(pohinawords))

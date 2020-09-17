@@ -16,13 +16,25 @@
 .item {
     flex-grow: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    padding: 10;
+}
+
+.word {
+    display: flex;
+    flex-grow: 1;
     font-size: 42px;
     color: white;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     font-family: sans-serif;
-    padding: 10;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.en {
+    border-top: 3px solid white;
 }
 
 button {

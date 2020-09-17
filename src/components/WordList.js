@@ -7,8 +7,9 @@ const WordList = ({ list }) => {
     return (
         <>
             {list.map((word, index) =>
-                    <div className='item' style={{backgroundColor: bgColors[index]}} key={word}>
-                        {word.toUpperCase()}
+                    <div className='item' style={{backgroundColor: bgColors[index]}} key={word.fi}>
+                        <div className="word">{word.fi.toUpperCase()}</div>
+                        <div className="word en">{word.en.toUpperCase()}</div>
                     </div>)
             }
         </>
