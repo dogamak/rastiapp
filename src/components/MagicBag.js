@@ -34,18 +34,13 @@ const MagicBag = () => {
     let arvoButton = null;
 
     if (pohinaList && normalList) {
-        wordList = (
-            <div className="wordList">
-                <WordList list={pohinaList} />
-                <WordList list={normalList} />
-            </div>
-        );
+        wordList = <WordList list={[ ...pohinaList, ...normalList ]} />
     }
 
     if (buttonVisibility) {
         arvoButton = (
             <div className="buttonDiv">
-                <button onClick={chooseWords} >ARVO!</button>
+                <button onClick={chooseWords}>ARVO!</button>
             </div>
         );
     }

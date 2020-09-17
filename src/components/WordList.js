@@ -7,7 +7,7 @@ const WordList = ({ list }) => {
     bgColors.sort(() => 0.5 - Math.random());
 
     return (
-        <>
+        <div className="wordList">
             {list.map((word, index) =>
                 <CSSTransition appear in={true} classNames="slide" timeout={300}>
                     <div className='item' style={{backgroundColor: bgColors[index]}} key={word.fi}>
@@ -19,7 +19,7 @@ const WordList = ({ list }) => {
                     </div>
                 </CSSTransition>)
             }
-        </>
+        </div>
     )
 }
 
